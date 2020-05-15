@@ -40,14 +40,14 @@
                         </div>
                         
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="fecha_donacion" class="col-md-4 col-form-label text-md-right">Fecha de Donacion</label>
 
                             <div class="col-md-6">
                                 <input id="fecha_donacion" type="text" class="form-control @error('fecha_donacion') is-invalid @enderror" name="fecha_donacion" value="{{ old('fecha_donacion', $donante->fecha_donacion) }}" autofocus>
 
                             </div>
-                        </div>
+                        </div> -->
 
         
 
