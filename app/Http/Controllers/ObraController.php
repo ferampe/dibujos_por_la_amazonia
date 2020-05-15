@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Obra;
+use Illuminate\Validation\Rule;
 
 class ObraController extends Controller
 {
@@ -44,7 +45,7 @@ class ObraController extends Controller
     	$validatedData = $request->validate([
 	        'artista' => 'required',
 	        'titulo' => 'required',
-	        'numero' => 'unique:obras|integer',
+	        'numero' => 'integer|unique:obras,numero,'.$id,
 	        'ano' => 'integer'
 	    ]);
 
@@ -163,4 +164,6 @@ class ObraController extends Controller
     	return redirect('obra');
 
     }
+
+    
 }

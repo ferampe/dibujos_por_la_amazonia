@@ -121,22 +121,25 @@ nav.menu-container{
     
 }
 
-.sidebar-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
+@media (min-width: 991px) {
+
+  .sidebar-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .make-me-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 0 15px;
+  }
+
 }
 
-.make-me-sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-    
-  padding: 0 15px;
-}
 
 .text-home{
   font-size: 0.8rem;
@@ -151,13 +154,14 @@ nav.menu-container{
 
   .sidebar-item {
     position: unset;
-   
-    
   }
 
   .make-me-sticky {
-    
     position: unset;
-  
   }
+
+  nav.menu-container{
+    justify-content: unset;
+  }
+
 }
