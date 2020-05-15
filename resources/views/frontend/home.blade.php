@@ -27,10 +27,7 @@
 								<a href="/"><img src="/logo.png" class="img-fluid mb-5" ></a>
 							</div>
 							
-							<div >
-								<a href="" class="menu-item d-block mb-3"><span class="item-info font-weight-normal">info</span></a>
-								<a href="#" class="menu-item d-block mb-5" data-toggle="modal" data-target="#exampleModal"><span class="item-donar font-weight-normal">donar ahora</span></a>	
-							</div>
+							@include('frontend.menu')
 
 							<div class="text-home">
 								<p><strong>Dibujos por la Amazonía</strong>, inspirado en el proyecto brasileño <a href="https://300desenhos.art/">300 Desenhos</a>, reúne a un grupo voluntario de artistas visuales para ayudar a las comunidades indígenas amazónicas en el Perú, que están atravesando momentos difíciles por la pandemia COVID-19.</p> 
@@ -67,7 +64,7 @@
 		</div>
 	</div>
 
-	 @include('frontend.modal-pago')
+	@include('frontend.modal-pago')
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

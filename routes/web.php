@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', "HomeController@index");
 Route::get('page/obra/{numero}', 'HomeController@obra');
+Route::get('page/info', 'HomeController@info')->name('info');
 Route::post('pagar', 'HomeController@pagar')->name('pagar');
 
 Auth::routes();

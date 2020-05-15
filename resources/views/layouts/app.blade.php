@@ -39,8 +39,8 @@
                     <ul class="navbar-nav mr-auto">
                         @if(Auth::check())
                         <li class="nav-item {{ Request::is('admin') ? 'active' : '' }}"><a class="nav-link" href="{{ route('dashboard') }}">Dashboard </a></li>
-                        <li class="nav-item {{ Request::is('obra/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('obra.index') }}">Obras </a></li>
-                        <li class="nav-item {{ Request::is('donante/*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('donante.index') }}">Donantes </a></li>
+                        <li class="nav-item {{ Request::is('obra/*') || Request::is('obra') ? 'active' : '' }}"><a class="nav-link" href="{{ route('obra.index') }}">Obras </a></li>
+                        <li class="nav-item {{ Request::is('donante/*') || Request::is('donante') ? 'active' : '' }}"><a class="nav-link" href="{{ route('donante.index') }}">Donantes </a></li>
                         @endif
                         
                     </ul>

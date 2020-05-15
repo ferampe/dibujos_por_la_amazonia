@@ -38,6 +38,10 @@ class HomeController extends Controller
         return view('frontend.obra', compact('obra'));
     }
 
+    public function info(){
+        return view('frontend.info');
+    }
+
     public function pagar(Request $request){
 
         $donante = new Donante;
