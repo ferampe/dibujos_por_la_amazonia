@@ -31,10 +31,13 @@
 
 							<div>
 								<h1 class="mb-4 font-weight-bold">{{ $obra->numero }}</h1>
-								<h5 class="mb-4">{{ $obra->titulo }}</h5>
-								<h5 class="font-weight-light">{{ $obra->tecnica }}</h5>
-								<h5 class="font-weight-light">{{ $obra->dimensiones }}</h5>
-								<h5 class="font-weight-light">{{ $obra->ano }}</h5>
+
+								<h6 class="mb-4 font-weight-bolder">{{ $obra->artista }}</h6>
+
+								<h6 class="font-weight-normal">{{ $obra->titulo }}</h6>
+								<h6 class="font-weight-normal">{{ $obra->tecnica }}</h6>
+								<h6 class="font-weight-normal">{{ $obra->dimensiones }}</h6>
+								<h6 class="font-weight-normal">{{ $obra->ano }}</h6>
 							</div>
 						</nav>
 					</div>
