@@ -29,6 +29,12 @@
                             <div class="col-md-2">
                                 <input id="numero" type="text" class="form-control @error('numero') is-invalid @enderror" name="numero" value="{{ old('numero', $obra->numero) }}" autocomplete="fomato" autofocus>
 
+                                @error('numero')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
                         </div>
 
@@ -55,6 +61,12 @@
 
                             <div class="col-md-2">
                                 <input id="ano" type="text" class="form-control @error('ano') is-invalid @enderror" name="ano" value="{{ old('ano', $obra->ano) }}" autocomplete="fomato" autofocus>
+
+                                @error('ano')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 
                             </div>
                         </div>

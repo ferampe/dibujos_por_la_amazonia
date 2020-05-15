@@ -41,6 +41,13 @@ class ObraController extends Controller
 
     public function update(Request $request, $id){
 
+    	$validatedData = $request->validate([
+	        'artista' => 'required',
+	        'titulo' => 'required',
+	        'numero' => 'unique:obras|integer',
+	        'ano' => 'integer'
+	    ]);
+
     	$obra = Obra::find($id);
 
     	$obra->artista = $request->input('artista');

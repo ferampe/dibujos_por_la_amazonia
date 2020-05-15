@@ -19,7 +19,7 @@
 		<div class="row">
 			
 			<!-- START SIDEBAR -->
-			<div class="col-lg-3 col-md-6">
+			<div class="col-lg-3 col-md-12">
 
 				<div class="sidebar-item">
 	                <div class="make-me-sticky">
@@ -43,7 +43,7 @@
 			<!-- END SIDEBAR -->
 
 			<!-- START OBRAS -->
-			<div class="col-lg-9 col-md-6">
+			<div class="col-lg-9 col-md-12">
 				<div class="home__works-grid">
 					@foreach($obras as $obra)
 					<a class="home__works-grid-element c1" href="/page/obra/{{ $obra->numero }}">
