@@ -1,0 +1,163 @@
+* {
+  font-family: 'Spartan', sans-serif;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+.home__works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 10px;
+}
+
+.home__works-grid:before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.home__works-grid > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.home__works-grid figure {
+  margin: 0;
+}
+
+.home__works-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.home__overlay {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.home__overlay span {
+  font-size: 75px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  position: relative;
+  top: 8%;
+  color: white;
+}
+
+.home__works-grid-element:hover .home__overlay {
+  opacity: 1;
+}
+
+.home__works-grid-element {
+  position: relative;
+}
+
+/* LAZYLOAD */
+@keyframes fadeInImg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.img-loaded {
+  animation: fadeInImg cubic-bezier(0.23, 1, 0.32, 1) 1;
+  position: relative;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 0.7s;
+  animation-delay: 0.1s;
+}
+
+@media (min-width: 991px) {
+  .home__works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  }
+}
+
+a.menu-item{
+  text-decoration:none;
+  font-size: 1.5rem;
+}
+
+span.item-donar, span.item-donar:hover {
+  color: #000;
+  border-bottom: 8px solid red;
+    
+}
+
+
+span.item-info, span.item-info:hover {
+    color: #888888;
+    border-bottom: 8px solid #888888;
+}
+
+nav.menu-container{
+  
+  /*width: 300px;*/
+  height: calc(100vh - 60px);
+
+  display: flex;
+  flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.sidebar-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.make-me-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+    
+  padding: 0 15px;
+}
+
+.text-home{
+  font-size: 0.8rem;
+}
+
+.info-pago{
+  font-size: 0.8rem;
+}
+
+
+@media (max-width: 991px) {
+
+  .sidebar-item {
+    position: unset;
+   
+    
+  }
+
+  .make-me-sticky {
+    
+    position: unset;
+  
+  }
+}
