@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center">
 
-        <div class="col-md-8">
+        <div class="col-md-10">
             <h1>Obras</h1>
             <div class="card">
                 <div class="card-header">
@@ -63,11 +63,19 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('obra.edit', $obra->id )}}" class="btn btn-primary btn-sm">Editar</a>
+
+                                    <form method="POST" action="{{ route('obra.destroy', $obra->id) }}" style="display: inline !important">
+                                        @csrf
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'> <i class="fa fa-trash"> </i></button>
+                                    </form>
+
+                                    <!-- <a href="{{ route('obra.destroy', $obra->id) }}" onclick="return confirm('Seguro de eliminar la Obra?')" class="btn btn-danger btn-sm">Eliminar</a> -->
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                        
+                       
                     </table>
                 </div>
 
@@ -78,4 +86,22 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ <script type="text/javascript">
+    $(document).ready(function(){
+
+        $('.show_confirm').click(function(e) {
+        if(!confirm('Esta seguro de eliminar la obra?')) {
+            e.preventDefault();
+        }
+    });
+
+
+    })
+    
+</script>
 @endsection

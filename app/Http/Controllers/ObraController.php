@@ -165,5 +165,17 @@ class ObraController extends Controller
 
     }
 
+    public function destroy($id){
+
+    	$obra = Obra::destroy($id);
+
+    	// if($obra->donante()){
+    		
+    	// }
+
+    	return redirect('obra');
+
+    }
+
     
 }
