@@ -4,7 +4,7 @@
 
 	<!-- <a href="#" class="menu-item d-block mb-4" id="link-pagar" formmethod="post"><span class="item-donar font-weight-bolder">donar ahora</span></a> -->
 
-	<form action="{{ url('/') }}/procesa" method="POST" id="form-pago">
+	<form action="{{ url('/') }}/procesar-pago" method="POST">
 	  <script
 	    src="https://www.mercadopago.com.pe/integrations/v1/web-tokenize-checkout.js"
 	    data-public-key="TEST-e7d65a1e-4950-41f6-be95-a94834b7073f"
