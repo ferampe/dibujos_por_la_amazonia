@@ -61,7 +61,7 @@
                                     <small>{{ $obra->donante->nombre}}</small>
                                     @endif
                                 </td>
-                                <td>
+                                <td style="width: 20%">
                                     <a href="{{ route('obra.edit', $obra->id )}}" class="btn btn-primary btn-sm">Editar</a>
 
                                     <form method="POST" action="{{ route('obra.destroy', $obra->id) }}" style="display: inline !important">

@@ -52,6 +52,13 @@ class DonanteController extends Controller
     	return redirect('donante');
     }
 
+    public function show($id){
+        $donante = Donante::with('obra')->find($id);
+
+        return view('backend.donante-show', compact('donante'));
+
+    }
+
     public function edit($id){
 
     	$donante = Donante::find($id);

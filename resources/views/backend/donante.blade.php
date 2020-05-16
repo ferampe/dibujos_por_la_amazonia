@@ -71,7 +71,7 @@
                                     @endif
 
                                 </td>
-                                <td>{{ $donante->nombre}}</td>
+                                <td><a href="{{ route('donante.show', $donante->id) }}">{{ $donante->nombre}}</a></td>
                                 <td>{{ $donante->email}}</td>
 
                                 @if($donante->obra)
