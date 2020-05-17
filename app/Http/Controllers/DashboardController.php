@@ -28,4 +28,9 @@ class DashboardController extends Controller
     	return view('backend.dashboard', compact('totalObras', 'obrasAsignadas', 'obrasDisponibles', 'obrasOcultas','donantesRegistrados', 'donantesQuePagaron','donantesAtendidos', 'donantesPorAtender'));
 
     }
+
+    public function webhook(Request $request){
+
+        \Log::info($request->all());
+    }
 }

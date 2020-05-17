@@ -118,12 +118,18 @@ span.item-info, span.item-info:hover {
 nav.menu-container{
   
   /*width: 300px;*/
-  height: calc(100vh - 60px);
+  height: calc(100vh - 40px);
 
   display: flex;
   flex-direction: column;
-    justify-content: space-between;
+  justify-content: space-between;
     
+}
+
+@media(max-width: 1000px){
+  .language-slide{
+    display: none;
+  }
 }
 
 @media (min-width: 991px) {
@@ -147,6 +153,10 @@ nav.menu-container{
 
 
 .text-home{
+  font-size: 0.7rem;
+}
+
+.text-info-page{
   font-size: 0.8rem;
 }
 

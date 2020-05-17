@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center">
 
-        <div class="col-md-8">
+        <div class="col-md-10">
             <h1>Donantes</h1>
             @if(session('success'))
             <div class="alert alert-success" role="alert">
@@ -53,6 +53,7 @@
                                 <th>Nombre</th>
                                 <th>Email</th>
                                 <th>Obra</th>
+                                <th>Numero Transaccion</th>
                                 <th>Estado</th>
                                 <th></th>  
                             </tr>
@@ -79,6 +80,8 @@
                                 @else
                                 <td></td>
                                 @endif
+
+                                <td>{{ $donante->transaccion }}</td>
                                 
                                 <td>{{ Str::ucfirst($donante->status) }}</td>
                                 <td>

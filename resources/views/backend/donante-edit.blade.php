@@ -22,9 +22,18 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="identificacion" class="col-md-4 col-form-label text-md-right">Numero Identificacion</label>
+
+                            <div class="col-md-6">
+                                <input id="identificacion" type="text" class="form-control @error('identificacion') is-invalid @enderror" name="identificacion" value="{{ old('identificacion', $donante->identificacion) }}" required autofocus>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
 
-                            <div class="col-md-2">
+                            <div class="col-md-6">
                                 <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $donante->email) }}" autocomplete="fomato" autofocus>
 
                             </div>
@@ -35,6 +44,24 @@
 
                             <div class="col-md-6">
                                 <input id="telefono" type="text" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono', $donante->telefono) }}" required autofocus>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="pais" class="col-md-4 col-form-label text-md-right">Pais</label>
+
+                            <div class="col-md-6">
+                                <input id="pais" type="text" class="form-control @error('pais') is-invalid @enderror" name="pais" value="{{ old('pais', $donante->pais) }}"  autofocus>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion</label>
+
+                            <div class="col-md-6">
+                                <input id="direccion" type="text" class="form-control @error('direccion') is-invalid @enderror" name="direccion" value="{{ old('direccion', $donante->direccion) }}"  autofocus>
 
                             </div>
                         </div>

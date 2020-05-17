@@ -13,12 +13,26 @@
 
 	<link rel="stylesheet" href="/style.css">
 
+	@yield('css')
+
 </head>
-<body class="mt-3">
+<body class="mt-1">
 	
 	<div class="container-fluid">
-
 		
+		<div class="row mb-2">
+			<div class="col d-flex justify-content-end">
+
+				@if($lang == 'en')
+				<a href="/" style="color: black">ESP</a> / <a href="/en" style="color: black"><strong>ENG</strong></a>
+				@else
+				<a href="/" style="color: black"><strong>ESP</strong></a> / <a href="/en" style="color: black">ENG</a>
+				@endif
+			
+
+			</div>
+		</div>
+
 		<div class="row">
 			
 			<!-- START SIDEBAR -->
@@ -28,12 +42,32 @@
 	                <div class="make-me-sticky">
 						<nav class="menu-container" >
 							<div class="logo">
-								<a href="/"><img src="/logo.png" class="mb-4" ></a>
+								@if(isset($lang) && $lang == 'en')
+									<a href="/en"><img src="/logo.png" class="mb-4" ></a>
+								@else
+									<a href="/"><img src="/logo.png" class="mb-4" ></a>
+								@endif
 							</div>
 							
 							@include('frontend.menu')
 
 							@yield('slide')
+							
+
+							@if(\Route::current()->getName() == "info" || \Route::current()->getName() == "info-en" || \Route::current()->getName() == "donar" || \Route::current()->getName() == "donar-en")
+							<div></div>
+							@endif
+							
+
+							<!-- <div class="language-slide">
+		
+								@if($lang == 'en')
+								<a href="/" style="color: black">ESP</a> / <a href="/en" style="color: black"><strong>ENG</strong></a>
+								@else
+								<a href="/" style="color: black"><strong>ESP</strong></a> / <a href="/en" style="color: black">ENG</a>
+								@endif
+							
+							</div> -->
 						</nav>
 					</div>
 				</div>
@@ -61,11 +95,14 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 
 
+
 <script>
 	$(function() {
         $('.lazy').Lazy();
     });
 </script>
+
+@yield('js')
 	
 </body>
 </html>

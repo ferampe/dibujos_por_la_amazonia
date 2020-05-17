@@ -13,16 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "HomeController@index");
-Route::get('page/obra/{numero}', 'HomeController@obra');
-Route::get('page/info', 'HomeController@info')->name('info');
-
-Route::post('pagar', 'HomeController@pagar')->name('pagar');
-
-Auth::routes();
-
-
-
+use Illuminate\Http\Request;
 
 Route::middleware(['auth'])->group(function () {
     
@@ -33,15 +24,50 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+Route::get('/', "HomeController@index");
+Route::get('/en', "HomeController@indexen");
+
+Route::get('page/info', 'HomeController@info')->name('info');
+Route::get('{lang}/page/info', 'HomeController@info')->name('info-en');
+
+Route::get('page/donar', 'HomeController@donar')->name('donar');
+Route::get('{en}/page/donar', 'HomeController@donar')->name('donar-en');
+
+Route::get('page/obra', 'HomeController@obra')->name('page-obra');
+Route::get('{lang}/page/obra', 'HomeController@obra')->name('obra-en');
+
+
+Route::get('page/gracias', function(){
+	$lang = null;
+	return view('frontend.gracias', compact('lang'));
+});
+
+Route::get('{en}/page/gracias', function(){
+	$lang = 'en';
+	return view('frontend.gracias-en', compact('lang'));
+});
+
+
+Route::post('registrar-donante', 'DonanteController@registrar');
+Route::post('webhook', 'DashboardController@webhook');
+
+Auth::routes();
+
+
+
+
+
+
+
 
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::resource('/thumbnail', 'ThumbnailController');
-Route::resource('user', 'UserController');
+// Route::resource('/thumbnail', 'ThumbnailController');
+// Route::resource('user', 'UserController');
 
-Route::get('/imagen', function(){
-	return view('imagen');
-});
+// Route::get('/imagen', function(){
+// 	return view('imagen');
+// });

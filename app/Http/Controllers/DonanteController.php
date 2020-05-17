@@ -36,6 +36,26 @@ class DonanteController extends Controller
     	return view('backend.donante-create');
     }
 
+    public function registrar(Request $request){
+
+        var_dump($request->all());
+        // metodo para registrar al donante luego del pago.
+        $donante = new Donante;
+
+        $donante->nombre = $request->input('nombre');
+        $donante->email = $request->input('email');
+        $donante->telefono = $request->input('telefono');
+        $donante->identificacion = $request->input('identificacion');
+        $donante->direccion = $request->input('direccion');
+        $donante->pais = $request->input('pais');
+        $donante->transaccion = $request->input('transaccion');
+        $donante->status = 'pago';
+        
+        $donante->save();
+
+        return response()->json($donante);
+    }
+
     public function store(Request $request){
 
     	$donante = new Donante;
@@ -43,6 +63,9 @@ class DonanteController extends Controller
     	$donante->nombre = $request->input('nombre');
     	$donante->email = $request->input('email');
     	$donante->telefono = $request->input('telefono');
+        $donante->identificacion = $request->input('identificacion');
+        $donante->direccion = $request->input('direccion');
+        $donante->pais = $request->input('pais');
     	$donante->status = $request->input('status');
     	$donante->fecha_donacion = $request->input('fecha_donacion');
     	$donante->observaciones = $request->input('observaciones');
@@ -73,6 +96,9 @@ class DonanteController extends Controller
     	$donante->nombre = $request->input('nombre');
     	$donante->email = $request->input('email');
     	$donante->telefono = $request->input('telefono');
+        $donante->identificacion = $request->input('identificacion');
+        $donante->direccion = $request->input('direccion');
+        $donante->pais = $request->input('pais');
     	$donante->status = $request->input('status');
     	$donante->fecha_donacion = $request->input('fecha_donacion');
     	$donante->observaciones = $request->input('observaciones');

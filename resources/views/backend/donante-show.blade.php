@@ -11,8 +11,12 @@
 
                 	<ul class="list-group list-group-flush">
 					    <li class="list-group-item">Nombre: <strong>{{ $donante->nombre }}</strong></li>
+					    <li class="list-group-item">Numero Identificacion: <strong>{{ $donante->identificacion }}</strong></li>
 					    <li class="list-group-item">Email: <strong>{{ $donante->email }}</strong></li>
 					    <li class="list-group-item">Telefono: <strong>{{ $donante->telefono }}</strong></li>
+					    <li class="list-group-item">Pais: <strong>{{ $donante->pais }}</strong></li>
+					    <li class="list-group-item">Direccion: <strong>{{ $donante->direccion }}</strong></li>
+					    <li class="list-group-item">Transaccion: <strong>{{ $donante->transaccion }}</strong></li>
 					    <li class="list-group-item">Observaciones: <strong>{{ $donante->observaciones }}</strong></li>
 					    <li class="list-group-item">Estado: <strong>{{ $donante->status }}</strong></li>
 					</ul>

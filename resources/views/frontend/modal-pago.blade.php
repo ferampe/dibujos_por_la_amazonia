@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <form action="{{ route('pagar')}}" method="POST">
+  <form action="{{ route('donar')}}" method="POST">
      @csrf
   <div class="modal-dialog">
     <div class="modal-content">
